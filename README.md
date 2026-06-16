@@ -1,4 +1,4 @@
-****# Language Translator App — Real-Time TensorFlow Translator
+# Language Translator App — Real-Time TensorFlow Translator
 
 ## Project Overview
 
