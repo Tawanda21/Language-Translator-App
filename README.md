@@ -73,6 +73,25 @@ python service/server.py --model-path export/saved_model --port 8500
 
 6. Use the included gRPC or REST client examples to send translation requests.
 
+## Desktop GUI
+
+This repository now includes a real desktop application built with Tkinter instead of Streamlit.
+
+Launch it from the repository root:
+
+```bash
+python app.py
+```
+
+The GUI includes:
+
+- a text translation workspace,
+- English, German, and Afrikaans language selectors,
+- a streamed dataset browser for English-German and English-Afrikaans examples,
+- a pluggable backend that you can later replace with your TensorFlow model.
+
+When you have a trained model ready, I can wire the GUI to call it directly.
+
 ## Data
 
 - **Supported datasets:** WMT, OPUS, IWSLT. Scripts are included to fetch and prepare these corpora.

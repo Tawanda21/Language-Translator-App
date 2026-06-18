@@ -13,9 +13,10 @@ with your tokenizer/training pipeline directly.
 """
 import argparse
 import json
-from datasets import load_dataset
-import sys
 import os
+import sys
+
+from datasets import load_dataset
 
 
 def try_load_stream(candidates, split: str):
@@ -46,11 +47,11 @@ def stream_langpair(langpair: str, split: str, max_examples: int | None):
     """
     # mapping of language pair -> list of (dataset_name, config)
     candidates_map = {
-        "en-de": [("wmt14", "de-en"), ("opus100", "en-de"), ("opus", "en-de")],
-        "en-af": [("opus100", "en-af"), ("opus", "en-af"), ("ted_hrlr_translate", "af-en")],
+        "en-de": [("wmt14", "de-en"), ("opus100", "en-de"), ("opus_books", "en-de"), ("opus", "en-de")],
+        "en-af": [("opus100", "en-af"), ("opus_books", "en-af"), ("opus", "en-af"), ("ted_hrlr_translate", "af-en")],
         # allow reversed pairs
-        "de-en": [("wmt14", "de-en"), ("opus100", "de-en")],
-        "af-en": [("opus100", "af-en"), ("opus", "af-en")],
+        "de-en": [("wmt14", "de-en"), ("opus100", "de-en"), ("opus_books", "de-en")],
+        "af-en": [("opus100", "af-en"), ("opus_books", "af-en"), ("opus", "af-en")],
     }
 
     if langpair not in candidates_map:
